@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
+<!-- 	<script type="text/javascript" src='./js/script.js'></script> -->
+	<script src = './angular/config.js'></script>
+	<script src = './angular/order.js'></script>
+	<script src = './angular/customer.js'></script>
+
+</head>
+<body>
+	<h1>Craft Beers and Brew Fanatics</h1>
+	<div ng-app='myApp'>
+		<a href="#/">Fanatics</a> || <a href="#/orders">Brews</a>
+		<div ng-view=''>
+			
+		</div>
+	</div>
+</body>
+</html>
