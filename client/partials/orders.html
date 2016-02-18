@@ -1,31 +1,60 @@
 <div ng-controller='OrdersController'>
-	<h4>Add A Brew!!</h4>
-	<form>
-	Fanatic Name: <select ng-options='customer.name as customer.name for customer in customers' ng-model='new_order.customer_name'>
-				<option value='' disabled>Choose a Fanatic</option>
-			  </select>
-	Brews: <select ng-options='product.product as product.product for product in products' ng-model='new_order.product'>
-				<option value='' disabled>Pick Your Poison</option>
-			  </select>
-	Quantity: <select ng-model='new_order.quantity'>
-				<option ng-repeat='i in quantity' value='{{ i }}'>{{ i }}</option>
-			  </select>
-		<input ng-click='addOrder()' type='submit' value='Make order!'>
-	</form>
-	<table>
+	<!-- <div class="container"> -->
+	    <div class="row">
+	    	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+	    		<div class="col-md-12 text-center">
+					 <h4>Add A Brew!!</h4>
+ 	             </div>
+	   			<!--  <h4>Add A Brew!!</h4> -->
+					<form role="form">
+						<hr class="colorgraph">
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-6">
+									<div class="form-group">
+				                        <select type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="Date..." tabindex="1" ng-options='customer.name as customer.name for customer in customers' ng-model='new_order.customer_name'>
+				                        <option value='' disabled>Choose a Fanatic</option></select>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-md-6">
+									<div class="form-group">
+										<select type="text" name="dob" id="last_name" class="form-control input-lg" tabindex="2" ng-options='product.product as product.product for product in products' ng-model='new_order.product'>
+										<option value='' disabled>Pick Your Poison!</option></select>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+										<select type="text" name="dob" id="last_name" class="form-control input-lg" tabindex="2" ng-model='new_order.quantity'>
+										<option  ng-repeat='i in quantity' value='{{ i }}'>{{ i }}</option></select>
+							</div>
+							<hr class="colorgraph">
+							<div class="row">
+								 <div class="col-md-12 text-center">
+	                            	 <button class="btn btn-success" type="submit" ng-click='addOrder()'>Choose Your Favorite Brew!</button>
+	                        	</div>
+	                        </div>
+					</form>
+					<br></br>
+				</div>
+			</div>
+
+	
+	<table class="responstable">
 		<tr>
-			<th>Fanatic Name</th>
-			<th>Brew</th>
-			<th>Quantity</th>
-			<th>Date</th>
-			<th>Action</th>
+			<th> Fanatic Name </th>
+			<th> Brews </th>
+			<th> Quantity </th>
+			<th> Date</th>
+			<th> Action</th>
 		</tr>
 		<tr ng-repeat="order in orders | filter: filter_Name | orderBy: created_at">
 			<td ng-bind='order.customer_name'></td>
 			<td ng-bind='order.product'></td>
 			<td ng-bind='order.quantity'></td>
 			<td ng-bind='order.created_at | date: "longDate"'></td>
-			<td> <button ng-click='deleteOrder(order)'>Delete</button> </td>
+			<td> <button class="btn btn-danger" ng-click='deleteOrder(order)'>Delete</button> </td>
 		</tr>
 	</table>
+	</div>
 </div>
+
+
