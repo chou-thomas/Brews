@@ -4,7 +4,9 @@ var fs = require('fs');
 
 var path = require('path');
 
-mongoose.connect('mongodb://localhost/orders_and_customers_1');
+// mongoose.connect('mongodb://localhost/brews');
+
+mongoose.connect('mongodb://brews:12345678@ds011268.mongolab.com:11268/brews');
 
 var models_path = path.join(__dirname, './../models');
 
